@@ -1,0 +1,108 @@
+.d1
+{
+  transform: rotate(0deg);
+}
+.d2
+{
+  transform: rotate(90deg);
+}
+.d3
+{
+  transform: rotate(90deg);
+}
+.d4
+{
+  transform: rotate(0deg);
+}
+.d5
+{
+  transform: rotate(0deg);
+}
+.d6
+{
+  transform: rotate(0deg);
+}
+
+
+.r0
+{
+  transform: rotate(0deg);
+}
+.r1
+{
+  transform: rotate(90deg);
+}
+.r2
+{
+  transform: rotate(180deg);
+}
+.r3
+{
+  transform: rotate(270deg);
+}
+
+.default-color
+{
+  background-color: white;
+  color: black;
+}
+
+.c0
+{
+  background-color: red;
+  color: black;
+}
+.c1
+{
+  background-color: blue;
+  color: black;
+}
+.c2
+{
+  background-color: green;
+  color: black;
+}
+.c3
+{
+  background-color: yellow;
+  color: black;
+}
+.c4
+{
+  background-color: black;
+  color: white;
+}
+
+div
+{
+  display: inline-block;
+  font-family: "eXtreme Gammon",sans-serif;
+  font-size: 0px;
+}
+
+label
+{
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.cell
+{
+  font-size: 60px;
+}
+
+.answer
+{
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+input:checked ~ .answer
+{
+  height: auto;
+  padding: 0;
+  opacity: 1;
+}
