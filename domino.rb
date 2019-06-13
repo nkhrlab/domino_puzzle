@@ -12,6 +12,7 @@
 #     7              56
 
 require 'launchy'
+require 'pathname'
 
 def path(edges, src, dst, proh)
   if src == dst
@@ -163,10 +164,11 @@ if ARGV[4] != nil
 end
 
 pz = domino_puzzle(x, y, v)
-css = 
 
-File.open(File.expand_path(fname, __dir__), "w"){ |html|
-  html.puts("<!DOCTYPE html><head><link rel='stylesheet' type='text/css' href='#{File.expand_path('domino.css', __dir__)}'></style><head><html><body>")
+fpath = Pathname(File.expand_path(fname, __dir__))
+
+File.open(fpath, "w"){ |html|
+  html.puts("<!DOCTYPE html><head><link rel='stylesheet' type='text/css' href='#{Pathname(File.expand_path('domino.css', __dir__)).relative_path_from(fpath.dirname).to_s}'></style><head><html><body>")
   if pz == nil
     html.puts("<p>impossible</p>")
   else
@@ -192,4 +194,4 @@ File.open(File.expand_path(fname, __dir__), "w"){ |html|
   html.puts("<pre>params: #{y} #{x} #{v} #{srand(0)}</pre></body></html>")
 }
 
-Launchy.open(File.expand_path(fname, __dir__))
+Launchy.open(fpath.to_s)
